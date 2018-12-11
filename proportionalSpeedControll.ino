@@ -103,7 +103,9 @@ void moveTopose(double targetDist, int speedpwm)
     ((prev_diff_dist <= 100) && (diff_Dist <= 100)))
     {
       Serial.print("kecepatan konstan");
-    }else {
+    }else if(diff_Dist > 100){
+      Serial.print("Kecepatan konstan");
+    } else {
       vL -= 20;
       vR -= 20;
     }
